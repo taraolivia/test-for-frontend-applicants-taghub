@@ -1,7 +1,7 @@
 // src/App.tsx
 import "./App.css"
-import { Link, Routes, Route } from "react-router-dom"
-import Task1 from "./Task1"
+import { Link } from "react-router-dom";
+
 
 export default function App() {
   return (
@@ -19,21 +19,13 @@ export default function App() {
 
       <div className="flex items-stretch justify-between h-full w-full">
         <div className="bg-amber-50">
-          <Link to="/task1" className="block w-full h-full p-4">
-            1. The laggy chat
-          </Link>
+<Link to="/task1" className="underline text-blue-600">Open Laggy Chat</Link>
         </div>
         <div className="bg-purple-50">
-          <Link to="/items-explorer" className="block w-full h-full p-4">
-            2. Items Explorer
-          </Link>
+  2. <Link to="/items-explorer" className="underline text-blue-600">Items Explorer</Link>
         </div>
       </div>
 
-      <Routes>
-        <Route path="/task1" element={<Task1 />} />
-        {/* add more <Route> entries here for other pages */}
-      </Routes>
     </div>
   )
 }

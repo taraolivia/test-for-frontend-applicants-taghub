@@ -1,14 +1,19 @@
- import { StrictMode } from 'react'
- import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
- import './index.css'
- import App from './App.tsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ItemsExplorer from "./ItemsExplorer";
+import Task1 from "./Task1";
 
- createRoot(document.getElementById('root')!).render(
-   <StrictMode>
-    <App />
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/items-explorer" element={<ItemsExplorer />} />
+                <Route path="/Task1" element={<Task1 />} />
+      </Routes>
     </BrowserRouter>
-   </StrictMode>,
- )
+  </React.StrictMode>
+);
