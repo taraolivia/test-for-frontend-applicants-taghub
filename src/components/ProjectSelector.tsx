@@ -40,7 +40,7 @@ export default function ProjectSelector() {
     }
 
     load();
-  }, []);
+  }, [setProjectId]);
 
   function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const uuid = e.target.value;

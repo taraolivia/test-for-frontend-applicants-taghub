@@ -30,9 +30,10 @@ export interface Event {
 }
 
 export default function ItemEvents() {
-  const { projectId } = useSelectedProjectStore();
-  const { epcString } = useSelectedItemStore();
+  const projectId = useSelectedProjectStore((state) => state.projectId);
+  const epcString = useSelectedItemStore((state) => state.epcString);
   const [events, setEvents] = useState<Event[]>([]);
+  const setEpcString = useSelectedItemStore((state) => state.setEpcString);
 
   const [filters, setFilters] = useState({
     showUser: true,
@@ -62,7 +63,11 @@ export default function ItemEvents() {
   if (events.length === 0) return <p className="p-4">No events found.</p>;
 
   return (
-    <div className="p-4 bg-white border mt-4 rounded shadow">
+    <div className="p-4 bg-white border mt-4 rounded shadow relative">
+      {/* ❌ Close button */}
+      <button onClick={() => setEpcString(null)} className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-lg" aria-label="Close">
+        ×
+      </button>
       <h2 className="font-bold text-lg mb-4">Events for {epcString}</h2>
 
       <div className="mb-4 flex flex-wrap gap-4 text-base">
