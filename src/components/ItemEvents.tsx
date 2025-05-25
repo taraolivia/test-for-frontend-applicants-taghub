@@ -63,26 +63,22 @@ export default function ItemEvents() {
 
   return (
     <div className="p-4 bg-white border mt-4 rounded shadow">
-                    <h2 className="font-bold text-lg mb-4">Events for {epcString}</h2>
+      <h2 className="font-bold text-lg mb-4">Events for {epcString}</h2>
 
-
-      <div className="mb-4 flex flex-wrap gap-4 text-sm">
+      <div className="mb-4 flex flex-wrap gap-4 text-base">
         {Object.entries(filters).map(([key, value]) => (
           <label key={key} className="flex items-center gap-2">
-            <input
-              type="checkbox"
-              checked={value}
-              onChange={() =>
-                setFilters((f) => ({ ...f, [key]: !f[key as keyof typeof filters] }))
-              }
-            />
-            {key.replace(/^show/, "").replace(/([A-Z])/g, " $1").trim()}
+            <input type="checkbox" checked={value} onChange={() => setFilters((f) => ({ ...f, [key]: !f[key as keyof typeof filters] }))} />
+            {key
+              .replace(/^show/, "")
+              .replace(/([A-Z])/g, " $1")
+              .trim()}
           </label>
         ))}
       </div>
-<div className="flex gap-2 mb-2">
-<button
-          className="text-xs px-3 py-1 bg-blue-100 hover:bg-blue-200 rounded"
+      <div className="flex gap-2 mb-6 text-sm">
+        <button
+          className="px-3 py-1 bg-blue-100 hover:bg-blue-200 rounded"
           onClick={() => {
             const allTrue = Object.keys(filters).reduce((acc, key) => {
               acc[key as keyof typeof filters] = true;
@@ -122,19 +118,13 @@ export default function ItemEvents() {
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-sm text-gray-800">
-                    {typeof e.value === "string" && !isNaN(Date.parse(e.value))
-                      ? new Date(e.value.replace(" ", "T")).toLocaleString()
-                      : String(e.value)}
-                  </p>
+                  <p className="text-sm text-gray-800">{typeof e.value === "string" && !isNaN(Date.parse(e.value)) ? new Date(e.value.replace(" ", "T")).toLocaleString() : String(e.value)}</p>
                 )}
               </div>
             )}
 
             {filters.showUser && <div>👤 User: {e.user}</div>}
-            {filters.showTimestamp && (
-              <div>📅 Timestamp: {new Date(e.userTimestamp.replace(" ", "T")).toLocaleString()}</div>
-            )}
+            {filters.showTimestamp && <div>📅 Timestamp: {new Date(e.userTimestamp.replace(" ", "T")).toLocaleString()}</div>}
             {filters.showMessage && <div>📝 Message: {e.message}</div>}
             {filters.showEmail && e.userObject && (
               <div>
@@ -142,15 +132,9 @@ export default function ItemEvents() {
                 🙍‍♀️ Name: {e.userObject.first_name} {e.userObject.last_name}
               </div>
             )}
-            {filters.showTimezone && (
-              <div>🕓 Timezone-aware: {e.timezoneAwareTime && !isNaN(Date.parse(e.timezoneAwareTime))
-                ? new Date(e.timezoneAwareTime.replace(" ", "T")).toLocaleString()
-                : e.timezoneAwareTime || "N/A"}</div>
-            )}
+            {filters.showTimezone && <div>🕓 Timezone-aware: {e.timezoneAwareTime && !isNaN(Date.parse(e.timezoneAwareTime)) ? new Date(e.timezoneAwareTime.replace(" ", "T")).toLocaleString() : e.timezoneAwareTime || "N/A"}</div>}
             {filters.showStringData && <div>🔤 String Data: {e.stringData}</div>}
-            {filters.showIntegerData && e.integerData !== null && (
-              <div>🔢 Integer Data: {e.integerData}</div>
-            )}
+            {filters.showIntegerData && e.integerData !== null && <div>🔢 Integer Data: {e.integerData}</div>}
             {filters.showUrlData && e.urlData && (
               <div>
                 🔗 URL: <a href={e.urlData}>{e.urlData}</a>
@@ -163,7 +147,9 @@ export default function ItemEvents() {
               </>
             )}
             {filters.showProject && (
-              <div>📦 Project: {e.project} (ID: {e.projectId})</div>
+              <div>
+                📦 Project: {e.project} (ID: {e.projectId})
+              </div>
             )}
             {filters.showEventType && <div>📊 Event Type: {e.eventType}</div>}
             {filters.showEventId && <div>🆔 Internal Event ID: {e.id}</div>}

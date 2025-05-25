@@ -26,7 +26,7 @@ export default function ItemList() {
       })
       .catch(console.error)
       .finally(() => setLoading(false));
-  }, [projectId]);
+}, [projectId, setEpcString]);
 
   if (!projectId) return null;
   if (loading) return <p className="text-sm text-gray-600">Loading items...</p>;
