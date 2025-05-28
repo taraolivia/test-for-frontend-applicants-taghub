@@ -3,6 +3,7 @@ import "./App.css";
 import { Link } from "react-router-dom";
 import tagHubLogo from "./assets/tagHubLogo.png";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -18,10 +19,16 @@ export default function App() {
         <section className="bg-background-800 p-6 rounded-xl shadow space-y-5 border border-background-700">
           <h3 className="text-lg font-semibold text-primary-50">About this app</h3>
           <p>This app is built to demonstrate my solutions for test 1 and 2.</p>
-          <p className="text-sm">
+          <p className="text-base">
             Test description:{" "}
             <a href="https://gitlab.taghub.net/documentation/devdocs/-/wikis/Test-for-Frontend-applicants" target="_blank" rel="noopener noreferrer" className="text-accent-300 underline hover:text-accent-100">
               gitlab.taghub.net/.../Test-for-Frontend-applicants
+            </a>
+          </p>
+                    <p className="text-base">
+            Repository:{" "}
+            <a href="https://github.com/taraolivia/test-for-frontend-applicants-taghub" target="_blank" rel="noopener noreferrer" className="text-accent-300 underline hover:text-accent-100">
+              https://github.com/taraolivia/test-for-frontend-applicants-taghub
             </a>
           </p>
           <p className="text-base text-text-400">Built with Vite, React, TypeScript and Tailwind. Deployed with Netlify.</p>
@@ -36,6 +43,7 @@ export default function App() {
           </Link>
         </section>
       </div>
+      <Footer />
     </div>
   );
 }

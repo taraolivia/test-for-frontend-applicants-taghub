@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LaggyChatRoom from "../components/LaggyChatRoom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Task1() {
   const [messages, setMessages] = useState<{ id: number; text: string }[]>([]);
@@ -13,6 +14,7 @@ export default function Task1() {
     <div className="min-h-screen p-8 w-full bg-gradient-to-br from-[#00091a] via-[#013c9b] to-[#c9a5f3] text-text-50">
       <Navbar />
       <LaggyChatRoom messages={messages} onSendMessage={handleSendMessage} />
+      <Footer />
     </div>
   );
 }

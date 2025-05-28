@@ -1,54 +1,104 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Test for Frontend Applicants – TagHub
 
-Currently, two official plugins are available:
+**Author:** Tara Olivia Bjørheim  
+**Live demo:** _[View on Netlify](https://your-netlify-link.netlify.app)_  
+**Repo:** _[GitHub](https://tara-test-frontend.netlify.app/)_
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## About the Project
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project was created as a submission for the frontend developer assignment at **Smart Management AS**, built around their product **TagHub**. It demonstrates my solutions for two tasks:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Task 1:** Debug and analyze a laggy chat UI.  
+- **Task 2:** Build a functional UI for exploring project items and viewing related events.
+
+📄 [Test Description](https://gitlab.taghub.net/documentation/devdocs/-/wikis/Test-for-Frontend-applicants)
+
+---
+
+## 🛠️ Stack & Tools
+
+- React (with Vite)  
+- TypeScript  
+- Tailwind CSS  
+- Zustand (for global state)  
+- React Router  
+- Netlify (deployment)
+
+---
+
+## Task 1 – Laggy Chat
+
+🔗 **Path:** `/task1`
+
+A performance analysis and explanation page that replicates a laggy chat interface. It includes:
+
+- The original unoptimized chat component  
+- A written explanation of what causes the lag  
+- Suggested improvements (explained simply)  
+- UX impact discussion
+
+---
+
+## Task 2 – Items Explorer
+
+🔗 **Path:** `/items-explorer`
+
+A dynamic UI for selecting a project and viewing all associated items and events. Features include:
+
+- Project selector dropdown  
+- Scrollable item table with filter options  
+- Clickable item cards that open a detail view  
+- Full event history per item  
+- Login with TagHub access key
+
+---
+
+## 🔐 Authentication
+
+To access the TagHub API, the user must enter a valid `TAGHUB_ACCESS_KEY`.  
+A simple login page stores the key using Zustand and persists it in localStorage.
+
+The footer shows the login status and offers log in/out options.
+
+---
+
+## Getting Started
+
+Clone the repo:
+
+```bash
+git clone https://github.com/taraolivia/test-for-frontend-applicants-taghub
+cd test-for-frontend-applicants-taghub
+````
+
+Install dependencies:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Start development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+---
+
+## ✅ Features
+
+* ✨ Smooth, responsive UI with Tailwind
+* 🔁 Context-aware routing
+* 🔐 Authentication with persistent state
+* ⚡ Real API data fetching (TagHub)
+* ♿ Accessibility-focused layout
+
+---
+
+## ✨ Author
+
+**Tara Olivia Bjørheim**
+Frontend Developer & Administrative Coordinator

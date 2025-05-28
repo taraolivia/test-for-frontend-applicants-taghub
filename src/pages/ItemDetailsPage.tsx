@@ -5,6 +5,7 @@ import ItemEvents from "../components/ItemEvents";
 import { useSelectedItemStore } from "../stores/useSelectedItemStore";
 import Navbar from "../components/Navbar";
 import { useAuthStore } from "../stores/useAuthStore";
+import Footer from "../components/Footer";
 
 export default function ItemDetailsPage() {
   const { epc } = useParams();
@@ -35,6 +36,8 @@ export default function ItemDetailsPage() {
       <div className="max-w-screen-xl mx-auto px-4 py-6">
         <ItemEvents />
       </div>
+            <Footer />
+
     </div>
   );
 }

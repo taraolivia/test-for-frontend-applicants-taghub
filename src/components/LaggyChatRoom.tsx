@@ -16,7 +16,7 @@ export default function LaggyChatRoom({ messages, onSendMessage }: { messages: {
   };
 
   return (
-    <div className="p-6 mt-10 max-w-2xl mx-auto bg-background-900  rounded-xl shadow-md text-text-50">
+    <div className="p-6 my-10 max-w-2xl mx-auto bg-background-900  rounded-xl shadow-md text-text-50">
       <h1 className="text-xl font-bold mb-4 text-accent-200">Task 1: The Laggy Chat</h1>
 
       <p className="mb-4 text-base text-text-50">This is the original, unoptimized implementation. Try typing fast and send many messages to see the lag.</p>
