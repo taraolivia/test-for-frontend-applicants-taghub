@@ -5,16 +5,15 @@ let accessKey: string | null = null;
 export async function login(username: string, password: string, consumerKey: string) {
   const res = await fetch(`${API_BASE}/user/accesskey/plain`, {
     method: "POST",
-headers: {
-  TAGHUB_CONSUMER_KEY: consumerKey, // no quotes
-  "Content-Type": "application/x-www-form-urlencoded",
-},
+    headers: {
+      TAGHUB_CONSUMER_KEY: consumerKey, 
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
 
     body: new URLSearchParams({ username, password }),
   });
 
-  const raw = await res.text(); // 👈 get raw response text
-  console.log("🪵 Login response:", raw); // 👈 print it
+  const raw = await res.text(); 
 
   if (!res.ok) throw new Error("Login failed");
 
@@ -23,15 +22,13 @@ headers: {
   return accessKey;
 }
 
-
 function getHeaders(consumerKey: string) {
   if (!accessKey) throw new Error("Not authenticated");
   return {
-    "TAGHUB_CONSUMER_KEY": consumerKey,
-    "TAGHUB_ACCESS_KEY": accessKey,
+    TAGHUB_CONSUMER_KEY: consumerKey,
+    TAGHUB_ACCESS_KEY: accessKey,
   };
 }
-
 
 export async function fetchItems(projectId: string, consumerKey: string) {
   const res = await fetch(`${API_BASE}/projects/${projectId}/items`, {
@@ -65,4 +62,3 @@ export async function fetchEvents(projectId: string, epcString: string, consumer
   const result = await res.json();
   return result.data;
 }
-

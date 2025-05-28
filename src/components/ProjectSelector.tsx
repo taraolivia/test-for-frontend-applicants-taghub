@@ -19,10 +19,7 @@ export default function ProjectSelector() {
   useEffect(() => {
     async function load() {
       try {
-        console.log("\ud83d\udd10 Attempting login with:");
-        console.log("username:", username);
-        console.log("password:", password);
-        console.log("consumerKey:", consumerKey);
+
 
         const accessKey = await login(username, password, consumerKey);
         console.log("\u2705 Logged in successfully. Access key:", accessKey);
@@ -53,14 +50,10 @@ export default function ProjectSelector() {
 
   return (
     <div className="p-4">
-      <label className="block font-medium mb-1">Project:</label>
-      <select
-        value={selected}
-        onChange={handleChange}
-        className="p-2 border rounded"
-      >
+      <label className="block font-medium mb-2 text-text-50">Project:</label>
+      <select value={selected} onChange={handleChange} className="p-2 rounded bg-background-800 border border-background-600 text-text-50 focus:outline-none focus:ring-2 focus:ring-primary-500">
         {projects.map((p) => (
-          <option key={p.uuid} value={p.uuid}>
+          <option key={p.uuid} value={p.uuid} className="text-background-900">
             {p.name}
           </option>
         ))}

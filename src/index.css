@@ -1,14 +1,238 @@
 @import "tailwindcss";
 
+/* === Backgrounds === */
+.bg-background-950 {
+  background-color: var(--background-950);
+}
+.bg-background-900 {
+  background-color: var(--background-900);
+}
+.bg-background-800 {
+  background-color: var(--background-800);
+}
+.bg-background-700 {
+  background-color: var(--background-700);
+}
+.bg-background-600 {
+  background-color: var(--background-600);
+}
+.bg-background-500 {
+  background-color: var(--background-500);
+}
+.bg-background-400 {
+  background-color: var(--background-400);
+}
+.bg-background-300 {
+  background-color: var(--background-300);
+}
+.bg-background-200 {
+  background-color: var(--background-200);
+}
+.bg-background-100 {
+  background-color: var(--background-100);
+}
+.bg-background-50 {
+  background-color: var(--background-50);
+}
+
+/* === Text === */
+.text-text-950 {
+  color: var(--text-950);
+}
+.text-text-900 {
+  color: var(--text-900);
+}
+.text-text-800 {
+  color: var(--text-800);
+}
+.text-text-700 {
+  color: var(--text-700);
+}
+.text-text-600 {
+  color: var(--text-600);
+}
+.text-text-500 {
+  color: var(--text-500);
+}
+.text-text-400 {
+  color: var(--text-400);
+}
+.text-text-300 {
+  color: var(--text-300);
+}
+.text-text-200 {
+  color: var(--text-200);
+}
+.text-text-100 {
+  color: var(--text-100);
+}
+.text-text-50 {
+  color: var(--text-50);
+}
+
+/* === Accent === */
+.text-accent-50 {
+  color: var(--accent-50);
+}
+.text-accent-100 {
+  color: var(--accent-100);
+}
+.text-accent-200 {
+  color: var(--accent-200);
+}
+.text-accent-300 {
+  color: var(--accent-300);
+}
+.text-accent-400 {
+  color: var(--accent-400);
+}
+.text-accent-500 {
+  color: var(--accent-500);
+}
+.text-accent-600 {
+  color: var(--accent-600);
+}
+.text-accent-700 {
+  color: var(--accent-700);
+}
+.text-accent-800 {
+  color: var(--accent-800);
+}
+.text-accent-900 {
+  color: var(--accent-900);
+}
+.text-accent-950 {
+  color: var(--accent-950);
+}
+
+.bg-accent-50 {
+  background-color: var(--accent-50);
+}
+.bg-accent-100 {
+  background-color: var(--accent-100);
+}
+.bg-accent-200 {
+  background-color: var(--accent-200);
+}
+.bg-accent-300 {
+  background-color: var(--accent-300);
+}
+.bg-accent-400 {
+  background-color: var(--accent-400);
+}
+.bg-accent-500 {
+  background-color: var(--accent-500);
+}
+.bg-accent-600 {
+  background-color: var(--accent-600);
+}
+.bg-accent-700 {
+  background-color: var(--accent-700);
+}
+.bg-accent-800 {
+  background-color: var(--accent-800);
+}
+.bg-accent-900 {
+  background-color: var(--accent-900);
+}
+.bg-accent-950 {
+  background-color: var(--accent-950);
+}
+
+/* === Primary === */
+.text-primary-100 {
+  color: var(--primary-100);
+}
+.text-primary-300 {
+  color: var(--primary-300);
+}
+.bg-primary-200 {
+  background-color: var(--primary-200);
+}
+.bg-primary-300 {
+  background-color: var(--primary-300);
+}
+
+/* === Secondary === */
+.bg-secondary-200 {
+  background-color: var(--secondary-200);
+}
+.bg-secondary-300 {
+  background-color: var(--secondary-300);
+}
+
+/* === Contrast-aware borders or shadows (optional) === */
+.border-background-900 {
+  border-color: var(--background-900);
+}
 
 :root {
+  --text-50: #e5ffff;
+  --text-100: #ccffff;
+  --text-200: #99ffff;
+  --text-300: #66ffff;
+  --text-400: #33ffff;
+  --text-500: #00ffff;
+  --text-600: #00cccc;
+  --text-700: #009999;
+  --text-800: #006666;
+  --text-900: #003333;
+  --text-950: #00191a;
+
+  --background-50: #e5eeff;
+  --background-100: #ccdeff;
+  --background-200: #99bdff;
+  --background-300: #669cff;
+  --background-400: #337aff;
+  --background-500: #0059ff;
+  --background-600: #0047cc;
+  --background-700: #003699;
+  --background-800: #002466;
+  --background-900: #001233;
+  --background-950: #00091a;
+
+  --primary-50: #e5efff;
+  --primary-100: #cce0ff;
+  --primary-200: #99c0ff;
+  --primary-300: #66a1ff;
+  --primary-400: #3381ff;
+  --primary-500: #0062ff;
+  --primary-600: #004ecc;
+  --primary-700: #003b99;
+  --primary-800: #002766;
+  --primary-900: #001433;
+  --primary-950: #000a1a;
+
+  --secondary-50: #e5f1ff;
+  --secondary-100: #cce3ff;
+  --secondary-200: #99c7ff;
+  --secondary-300: #66abff;
+  --secondary-400: #338fff;
+  --secondary-500: #0073ff;
+  --secondary-600: #005ccc;
+  --secondary-700: #004599;
+  --secondary-800: #002e66;
+  --secondary-900: #001733;
+  --secondary-950: #000b1a;
+
+  --accent-50: #f2e9fc;
+  --accent-100: #e4d2f9;
+  --accent-200: #c9a5f3;
+  --accent-300: #af78ed;
+  --accent-400: #944be7;
+  --accent-500: #791fe0;
+  --accent-600: #6118b4;
+  --accent-700: #491287;
+  --accent-800: #300c5a;
+  --accent-900: #18062d;
+  --accent-950: #0c0316;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--text-100);
+  background-color: var(--background-950);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,11 +242,16 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--primary-300);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--accent-100);
+  border-color: var(--accent-200);
+}
+
+html {
+  width: 100%;
 }
 
 body {
@@ -31,6 +260,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: var(--text-50);
+  background-color: var(--background-950);
+  font-size: 18px;
 }
 
 h1 {
@@ -45,23 +277,14 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  background-color: var(--primary-600);
+  color: var(--text-50);
+  transition: border-color 0.25s, background-color 0.25s;
 }
 button:hover {
-  border-color: purple;
+  border-color: var(--accent-400);
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-
+  outline: 4px auto var(--accent-400);
 }

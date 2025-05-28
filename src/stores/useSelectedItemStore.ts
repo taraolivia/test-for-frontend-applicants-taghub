@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 interface ItemState {
-  epcString: string | null; 
+  epcString: string | null;
   setEpcString: (id: string | null) => void;
 }
 

@@ -1,5 +1,4 @@
-
-declare module '@taghub/api' {
+declare module "@taghub/api" {
   interface Project {
     uuid: string;
     name: string;
@@ -19,11 +18,7 @@ declare module '@taghub/api' {
   }
 
   export class TagHubClient {
-    constructor(options: {
-      consumerKey: string;
-      username: string;
-      password: string;
-    });
+    constructor(options: { consumerKey: string; username: string; password: string });
 
     projects: {
       getProjects(): Promise<Project[]>;
@@ -35,11 +30,7 @@ declare module '@taghub/api' {
     };
 
     events: {
-      getEvents(options: {
-        projectId: string;
-        epcString: string;
-        serviceId?: string;
-      }): Promise<Event[]>;
+      getEvents(options: { projectId: string; epcString: string; serviceId?: string }): Promise<Event[]>;
     };
   }
 
